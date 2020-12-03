@@ -16,7 +16,7 @@ def get_vids_from_date(dir_hunt, date_to_pull_from):
         if date_to_pull_from == created_fmt.date():
             vids_from_date.append(vid)
 
-    if len(vids_from_date) == 0:
+    if not vids_from_date:
         logging.error(f'No videos were found from date {str(date_to_pull_from)}. No video will be written.')
         quit()
 
@@ -52,5 +52,5 @@ if __name__ == '__main__':
     dir_hunt = r'C:\Users\giles\Videos\Hunt  Showdown'  # Location where your hunt clips are stored
     custom_date = datetime(2020, 12, 2).date()  # Use a custom date if compiling video from a day in the past.
 
-    # main(dir_hunt=dir_hunt, date_to_pull_from=today)  # Compile videos from today
-    main(dir_hunt=dir_hunt, date_to_pull_from=custom_date)  # Compile videos from "custom_date"
+    main(dir_hunt=dir_hunt, date_to_pull_from=today)  # Compile videos from today
+    # main(dir_hunt=dir_hunt, date_to_pull_from=custom_date)  # Compile videos from "custom_date"
