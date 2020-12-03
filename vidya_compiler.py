@@ -25,6 +25,7 @@ def get_vids_from_date(dir_hunt, date_to_pull_from):
 
 def main(dir_hunt, date_to_pull_from):
     dir_hunt_p = Path(dir_hunt)
+    assert dir_hunt_p.exists()
     vids_list_p = get_vids_from_date(dir_hunt_p, date_to_pull_from)
     vids_list = [VideoFileClip(str(i)) for i in vids_list_p]
 
